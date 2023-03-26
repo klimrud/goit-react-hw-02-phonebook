@@ -13,3 +13,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h2 {
+  font-family: Consolas;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #010101; 
+   
+}
