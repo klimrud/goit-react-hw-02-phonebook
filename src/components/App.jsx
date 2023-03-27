@@ -16,9 +16,12 @@ export class App extends Component {
   };
 
   createContact = contact => {
+    if (this.state.contacts.some(el => el.name === contact.name)) {
+      alert (`${contact.name} is already in contacts`);
+    }else {
     this.setState(prevState => ({
       contacts: [...prevState.contacts, contact],
-    }));
+    }));}
   };
 
   removeContact = contactId => {
