@@ -1,33 +1,34 @@
 import { Component } from 'react';
 
 import { ContactForm } from './ContactForm/ContactForm.jsx';
- import { Filter } from './ContactForm/Filter.jsx';
-  import { ContactList } from './ContactForm/ContactList.jsx';
-  import contacts from './path/contacts.json';
-// import { nanoid } from 'nanoid';
-// model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
+import { Filter } from './ContactForm/Filter.jsx';
+import { ContactList } from './ContactForm/ContactList.jsx';
 
 export class App extends Component {
   state = {
-    contacts: [],
+    contacts: [
+      // {"id": "id-1", "name": "Rosie Simpson", "number": "459-12-56"},
+      // {"id": "id-2", "name": "Hermione Kline", "number": "443-89-12"},
+      // {"id": "id-3", "name": "Eden Clements", "number": "645-17-79"},
+      // {"id": "id-4", "name": "Annie Copeland", "number": "227-91-26"}
+    ],
     filter: '',
   };
 
   createContact = contact => {
-    this.setState(prevState =>({
-      contacts: [...prevState.contacts, contact, ...contacts],
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, contact],
     }));
-    console.log('contacts :>> ', this.contacts);
   };
 
-  // removeContact = (contactId) => {
-  //   this.setState(prevState =>{
-  //     contacts: prevState.contacts.filter(({id})=> id !== contactId)
-  //   })
-  // }
+  removeContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(({ id }) => id !== contactId),
+    }));
+  };
 
-  changeFilter = (filter) => {
-    this.setState({ filter, })
+  changeFilter = filter => {
+    this.setState({ filter });
   };
 
   filteredContacts = () => {
@@ -40,18 +41,25 @@ export class App extends Component {
 
   render() {
     const { filter, contacts } = this.state;
-    // const filteredContacts = this.filteredContacts();
-
+    const filteredContacts = this.filteredContacts();
 
     return (
       <div>
-        <h1>Phonebook</h1>
-        <ContactForm  onSubmit={this.createContact} />
+        <h2>Phonebook</h2>
+        <ContactForm onSubmit={this.createContact} />
 
         <h2>Contacts</h2>
-        <Filter filter={filter} onChange={this.changeFilter}/>
-        <ContactList contacts={contacts} onDelet={this.removeContact}
-         /> 
+        {contacts.length > 1 && (
+          <Filter filter={filter} onChange={this.changeFilter} />
+        )}
+        {contacts.length > 0 ? (
+          <ContactList
+            contacts={filteredContacts}
+            onDelete={this.removeContact}
+          />
+        ) : (
+          <p className='title'>No contacts</p>
+        )}
       </div>
     );
   }

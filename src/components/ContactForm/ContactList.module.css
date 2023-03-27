@@ -1,60 +1,51 @@
 .contacts-list {
-  /* list-style: none; */
-  /* margin: auto; */
+ 
 }
 
 .item {
   display: flex;
   margin: 0 auto;
   width: 500px;
-   height: 40px; 
-padding: 10px;
-align-items: center;
+  height: 40px;
+  padding: 10px;
+  align-items: center;
   border-radius: 2px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-
-.contactLink{
+.contactLink {
   cursor: pointer;
- margin-left: 20px;
-color: #757575;
-width: 200px;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #757575;
+  width: 200px;
 }
 
-.contactContainer{
+.contactContainer {
   display: flex;
   margin: 0 auto;
   width: 500px;
   /* padding: 10px; */
 }
 
-.contactHead{
-  margin: 0;
+.contactHead {
+  margin: 20px 0 0 ;
   padding-left: 20px;
   width: 200px;
 }
 
-.contactTille{
+.contactTille {
   margin: 0;
   width: 200px;
-  
- 
 }
-.btnIcon{
-  border-radius: 10px;
-  text-align: center;
-}
-.btnIcon:hover,
-.btnIcon:focus{
-  background: #60a5fa ;
+.btnIcon {
   border: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all .25s;
+  background: white;
 }
+
 .stats {
- width: 60px;
- transition: all .25s;
+  width: 60px;
+  transition: all 0.25s;
   /* padding: 10px; */
 }
 
@@ -85,8 +76,10 @@ width: 200px;
   fill: #4e545c;
 }
 
+
 .icon:hover,
 .icon:focus {
-  fill:  #fff;
-  transition: all .25s;
+  fill: #60a5fa;
+  transition: all 0.25s;
+  transform: scale(1.2);
 }

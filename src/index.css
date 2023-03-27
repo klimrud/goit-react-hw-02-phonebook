@@ -16,9 +16,23 @@ code {
 
 h2 {
   font-family: Consolas;
-    justify-content: center;
+   margin-top: 20px;
     align-items: center;
     font-size: 40px;
-    color: #010101; 
+    color: #3c3c3c; 
+    text-align: center;
+    margin: 0 auto;
    
 }
+
+.title{
+  font-family: Consolas;
+  padding-top: 50px;
+  align-items: center;
+  font-size: 28px;
+  color: #3c3c3c;
+  text-align: center;
+  margin: 0 auto;
+  border-top: 2px solid #3c3c3c;
+}
+
